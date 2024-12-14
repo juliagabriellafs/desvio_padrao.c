@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    double valores[6] = {}, soma = 0, sum;
+
+    printf("Insira o valor das medidas:\n");
+
+    for (int i = 0; i < 5; i++){
+        printf ("%d - ", i+1);
+        scanf ("%lf", &valores[i]);
+    }
+
+    for (int i = 0; i < 5; i++){
+        valores[5] += valores[i];
+    }
+    valores[5] /= 5.0;
+    for (int i = 0; i < 5; i++){
+        sum = (valores[i] - valores[5]) * (valores[i] - valores[5]);
+        soma += sum;
+    }
+    soma *= (1.0/4.0);
+
+    double quadrado = sqrt(soma);
+
+    printf("Média: %lf\n", valores[5]);
+    printf("Desvio padrão: %lf\n", quadrado);
+
+    return 0;
+}
